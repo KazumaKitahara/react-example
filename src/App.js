@@ -1,4 +1,4 @@
-import Header from './components/Header';
+import Header from './components/common/Header';
 import Contents from "./components/Contents";
 import styled from "styled-components";
 

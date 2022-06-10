@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import TodoTable from "./TodoTable";
-import TodoInputForm from "./TodoInputForm";
 import {useState} from "react";
+import styled from "styled-components";
+import {TodoTable, TodoInputForm} from ".";
+import {Description, Separator} from "./common";
 
 const ScContentsRoot = styled.div`
     padding: calc(50px + 16px) 32px 16px;
@@ -15,8 +15,12 @@ function Contents() {
 
     return (
         <ScContentsRoot>
-            <TodoInputForm addTodo={addTodo} />
-            <TodoTable todos={todos}/>
+            <TodoInputForm addTodo={addTodo}/>
+            <Separator/>
+            {todos.length === 0
+                ? <Description>追加したTODOがここに表示されます</Description>
+                : <TodoTable todos={todos}/>
+            }
         </ScContentsRoot>
     )
 }

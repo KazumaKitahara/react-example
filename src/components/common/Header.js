@@ -1,7 +1,7 @@
-import logo from "../imgs/logo.svg";
+import logo from "../../imgs/logo.svg";
 import styled from "styled-components"
-import ScDivFlexRow from "../common-sc/ScDivFlexRow";
-import {mixins} from "../mixins";
+import {ScDivFlexRow} from "../../common-sc";
+import {mixins} from "../../mixins";
 
 const ScHeaderRoot = styled.header`
     ${mixins.flexRowCenter}
