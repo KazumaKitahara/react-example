@@ -1,6 +1,7 @@
 import {useState} from "react";
 import styled from "styled-components";
-import {TodoTable, TodoInputForm} from ".";
+import TodoTable from "./TodoTable";
+import TodoInputForm from "./TodoInputForm";
 import {Description, Separator} from "./common";
 
 const ScContentsRoot = styled.div`
