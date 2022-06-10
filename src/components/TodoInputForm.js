@@ -29,11 +29,15 @@ function TodoInputForm(props) {
         setDescription(event.target.value);
     };
 
-
-
     const addTodo = () => {
-        props.addTodo(name, description)
+        initializeTodoForm();
+        props.addTodo(name, description);
     };
+
+    const initializeTodoForm = () => {
+        setName("");
+        setDescription("")
+    }
 
     return (
         <ScTodoInputFormRoot>
