@@ -1,8 +1,9 @@
-import React, {useRef, useState} from "react";
-import {TextField, FormGroup, Button} from "@mui/material";
-import styled from "styled-components";
-import {mixins} from "../mixins";
-import {FormErrorMessage} from "./common";
+import { useRef, useState} from 'react'
+import {TextField, FormGroup, Button} from '@mui/material'
+import styled from 'styled-components'
+import {mixins} from '../mixins'
+import {FormErrorMessage} from './common/index'
+import * as React from 'react'
 
 const ScTodoInputFormRoot = styled.div`
     ${mixins.flexColumn}
@@ -13,19 +14,21 @@ const ScTodoInputFormRoot = styled.div`
     }
 `;
 
-function TodoInputForm(props) {
+function TodoInputForm(props: any) {
     const nameRef = useRef(null);
     const [name, setName] = useState("");
     const [nameError, setNameError] = useState(false);
     const [namePristine, setNamePristine] = useState(true);
-    const handleChangeName = (event) => {
-        const ref = nameRef.current;
-        setNameError(!ref.validity.valid);
-        setName(event.target.value);
-        if (namePristine) setNamePristine(false);
+    const handleChangeName = (event: any) => {
+        const ref: any = nameRef.current;
+        if (ref) {
+            setNameError(!ref.validity.valid);
+            setName(event.target.value);
+            if (namePristine) setNamePristine(false);
+        }
     };
     const [description, setDescription] = useState("");
-    const handleChangeDescription = (event) => {
+    const handleChangeDescription = (event: any) => {
         setDescription(event.target.value);
     };
 
@@ -37,6 +40,7 @@ function TodoInputForm(props) {
     const initializeTodoForm = () => {
         setName("");
         setDescription("")
+        setNamePristine(true);
     }
 
     return (

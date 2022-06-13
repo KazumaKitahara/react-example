@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import {FormHelperText} from "@mui/material";
-import ErrorTwoToneIcon from '@mui/icons-material/ErrorTwoTone';
-import React from "react";
-import {mixins} from "../../mixins";
+import styled from 'styled-components'
+import {FormHelperText} from '@mui/material'
+import ErrorTwoToneIcon from '@mui/icons-material/ErrorTwoTone'
+import {mixins} from '../../mixins'
+import * as React from 'react'
 
 const ScFormErrorMessageRoot = styled.div`
     ${mixins.flexRowCenter}
@@ -17,7 +17,7 @@ const ScFormErrorMessageRoot = styled.div`
     }
 `
 
-const FormErrorMessage = (props) => {
+const FormErrorMessage = (props: any) => {
     return (
         <ScFormErrorMessageRoot>
             <ErrorTwoToneIcon fontSize="small" />

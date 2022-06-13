@@ -1,7 +1,9 @@
-import logo from "../../imgs/logo.svg";
-import styled from "styled-components"
-import {ScDivFlexRow} from "../../common-sc";
-import {mixins} from "../../mixins";
+import * as React from 'react'
+import styled from 'styled-components'
+import {ScDivFlexRow} from '../../common-sc/index'
+import {mixins} from '../../mixins'
+// @ts-ignore
+import { default as logoPath } from '../../imgs/logo.svg'
 
 const ScHeaderRoot = styled.header`
     ${mixins.flexRowCenter}
@@ -26,7 +28,7 @@ const ScHeaderTitle = styled.span`
     transform: translateY(-5px);
 `;
 const ScHeaderTitleDot = styled.span`
-    color: #61DAFB;
+    color: #61dafb;
     font-weight: bold;
     font-size: 2rem;
     padding-left: 2px;
@@ -36,7 +38,7 @@ function Header() {
     return (
         <ScHeaderRoot>
             <ScDivFlexRow>
-                <ScRotateLogo src={logo} alt="logo" />
+                <ScRotateLogo src={logoPath} alt="logo" />
                 <ScHeaderTitle>React Example<ScHeaderTitleDot>.</ScHeaderTitleDot></ScHeaderTitle>
             </ScDivFlexRow>
         </ScHeaderRoot>
